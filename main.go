@@ -12,7 +12,7 @@ import (
 
 	"github.com/adrg/xdg"
 
-	gobot "github.com/danrusei/gobot-bsky"
+	gobot "github.com/djotaku/gobot-bsky"
 )
 
 type lastfm struct {
@@ -179,7 +179,7 @@ func main() {
 	agent := gobot.NewAgent(ctx, ourSecrets.Bsky.server, ourSecrets.Bsky.handle, ourSecrets.Bsky.apikey)
 	agent.Connect(ctx)
 
-	post, err := gobot.NewPostBuilder("%s", postString).
+	post, err := gobot.NewPostBuilder(postString).
 		Build()
 	if err != nil {
 		fmt.Printf("Got error: %v", err)
