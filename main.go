@@ -22,9 +22,9 @@ type lastfm struct {
 }
 
 type blueskyConfig struct {
-	handle string
-	apikey string
-	server string
+	Handle string
+	Apikey string
+	Server string
 }
 
 type secrets struct {
@@ -172,11 +172,15 @@ func main() {
 		fmt.Printf("Unable to marshall. %s", err)
 	}
 	postString := assembleBskyPost(weeklyArtsts, *period)
-	fmt.Printf("Your toot will be: %s\n\n", postString)
+	fmt.Printf("Your post will be: %s\n\n", postString)
 
 	ctx := context.Background()
 
-	agent := gobot.NewAgent(ctx, ourSecrets.Bsky.server, ourSecrets.Bsky.handle, ourSecrets.Bsky.apikey)
+	if *debugMode {
+		fmt.Printf("Bluesky creds: %s, %s, %s\n", ourSecrets.Bsky.Server, ourSecrets.Bsky.Handle, ourSecrets.Bsky.Apikey)
+	}
+
+	agent := gobot.NewAgent(ctx, ourSecrets.Bsky.Server, ourSecrets.Bsky.Handle, ourSecrets.Bsky.Apikey)
 	agent.Connect(ctx)
 
 	post, err := gobot.NewPostBuilder(postString).
