@@ -1,7 +1,7 @@
 # lastfmBluesky
 
 ## Usage 
-Post your weekly and/or yearly last.fm stats to Mastodon
+Post your weekly and/or yearly last.fm stats to Bluesky
 
 
 - For last.fm get your key and secret at: https://www.last.fm/api/account/create (more about their API at: https://www.last.fm/api)
