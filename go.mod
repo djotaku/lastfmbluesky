@@ -5,6 +5,7 @@ go 1.24.6
 require (
 	github.com/adrg/xdg v0.5.3
 	github.com/djotaku/gobot-bsky v0.0.0-20250908193018-a70df82faaf3
+	github.com/djotaku/lastfmgo v0.0.0-20250918003951-d5b1a57d3b6c
 )
 
 require (
